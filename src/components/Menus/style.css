@@ -1,0 +1,6 @@
+.menucontainer {
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
+}

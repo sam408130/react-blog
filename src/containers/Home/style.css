@@ -1,0 +1,36 @@
+.container {
+    width: 64em;
+    max-width: calc(100% - 4em);
+		margin: 0 auto;
+}
+
+
+.container .nav {
+    color: #636363;
+    width: 64em;
+    position: absolute;
+    max-width: calc(100% - 4em);
+    background-color: #f7f7f7;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+    cursor: default;
+    text-align: center;
+}
+
+h1 {
+  font-weight: 300;
+  margin: 0 0 0.25em 0;
+  letter-spacing: -0.025em;
+  font-size: 2.5em;
+  line-height: 1.2;
+  color: inherit;
+  text-decoration: none;
+}
+
+.main {
+	background-color: #ffffff;
+	color: #636363;
+	border-radius: 0.25em;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}

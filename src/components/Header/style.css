@@ -1,0 +1,27 @@
+.header {
+    padding: 7em 5em 4em 5em ;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3.25em;
+    color: #ffffff;
+}
+
+.header span {
+    display: block;
+    margin: 0 0 1.5em 0;
+}
+
+.header p {
+    font-size: 1.25em;
+    margin: 0 0 2em 0;
+    color: #ffffff;
+    opacity: 0.65;
+}
+
+.header .logo img {
+  display: block;
+  margin: 0 auto;
+  max-width: 75%;
+}

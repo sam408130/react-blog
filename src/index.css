@@ -1,5 +1,22 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+body {
+  background-color: #935d8c;
+  background-image: url("http://oq51opnf2.bkt.clouddn.com/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+}
+
+body {
+  background-color: #935d8c;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+body, input, select, textarea {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 17pt;
+  font-weight: 300;
+  line-height: 1.65;
 }
