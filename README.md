@@ -655,10 +655,10 @@ class Front extends Component {
 ![articles.gif](http://upload-images.jianshu.io/upload_images/1224641-d1301856880e0bd4.gif?imageMogr2/auto-orient/strip)
 
 #### 系列文章
-[React技术栈+Express+Mongodb实现个人博客](http://www.jianshu.com/p/e8d68f9e29c6)
-[React技术栈+Express+Mongodb实现个人博客 -- Part 1 博客页面展示](http://www.jianshu.com/p/3ed54d305d8e)
-React技术栈+Express+Mongodb实现个人博客 -- Part 2 后台管理页面
-React技术栈+Express+Mongodb实现个人博客 -- Part 3 Express + Mongodb创建Server端
-React技术栈+Express+Mongodb实现个人博客 -- Part 4 使用Webpack
-React技术栈+Express+Mongodb实现个人博客 -- Part 5 使用Redux
-React技术栈+Express+Mongodb实现个人博客 -- Part 6 项目部署
+- [React技术栈+Express+Mongodb实现个人博客](http://www.jianshu.com/p/e8d68f9e29c6)
+- [React技术栈+Express+Mongodb实现个人博客 -- Part 1 博客页面展示](http://www.jianshu.com/p/3ed54d305d8e)
+- React技术栈+Express+Mongodb实现个人博客 -- Part 2 后台管理页面
+- React技术栈+Express+Mongodb实现个人博客 -- Part 3 Express + Mongodb创建Server端
+- React技术栈+Express+Mongodb实现个人博客 -- Part 4 使用Webpack
+- React技术栈+Express+Mongodb实现个人博客 -- Part 5 使用Redux
+- React技术栈+Express+Mongodb实现个人博客 -- Part 6 项目部署
