@@ -13,9 +13,17 @@ export default class Menus extends Component {
     }
 
     handleClick = (e) => {
-        this.setState ({
-            current: e.key
-        })
+        console.log('click ', e);
+        if(e.key === '首页'){
+            // this.props.getArticleList('');
+        }else{
+            // this.props.getArticleList(e.key);
+        }
+        let toPath = e.key === '首页'?'/':'/'+e.key;
+        this.setState({
+            current: e.key,
+        });
+        this.props.history.push(toPath);
     }
 
     render() {

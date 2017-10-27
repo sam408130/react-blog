@@ -1,11 +1,11 @@
-.container {
+.h_container {
     width: 64em;
     max-width: calc(100% - 4em);
 		margin: 0 auto;
 }
 
 
-.container .nav {
+.h_container .nav {
     color: #636363;
     width: 64em;
     position: absolute;
@@ -27,10 +27,9 @@ h1 {
   text-decoration: none;
 }
 
-.main {
+.h_container .main {
 	background-color: #ffffff;
 	color: #636363;
 	border-radius: 0.25em;
-  padding-bottom: 100px;
-  padding-top: 50px;
+  padding: 1em;
 }

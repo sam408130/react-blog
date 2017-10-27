@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import './style.css';
-import Header from '../../components/Header/Header';
-import Menus from '../../components/Menus/Menus';
+import Header from '../../components/Header';
+import Menus from '../../components/Menus';
+import ArticleList from '../../components/ArticleList'
+import { Redirect } from 'react-router-dom';
+
 
 class Home extends Component {
+
     render() {
+        const { tags } = this.props;
         return (
-            <div className="container">
+            <div className="h_container">
                 <Header />
                 <div className="nav">
-                    <Menus />
+                    <Menus history={this.props.history} />
                 </div>
                 <div className="main">
-                    这里是文章列表
+                    <ArticleList history={this.props.history} tags={tags} />
                 </div>
             </div>
         )
