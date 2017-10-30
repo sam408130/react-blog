@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import './style.css'
-import { Link } from 'react-router-dom'
-
 
 export default class ArticleListCell extends Component {
 
@@ -22,7 +20,7 @@ export default class ArticleListCell extends Component {
                         这里应该有摘要的，因为设计的数据库表表结构的时候忘记了，后面也是懒得加了，感觉太麻烦了，就算了
                     </p>
                     <div>
-                        <p className="info">
+                        <div className="info">
                             <div className="tag">
                                 <img src={require('./calendar.png')} alt="发表日期"/>
                                 <div>{this.props.data.time}</div>
@@ -35,7 +33,7 @@ export default class ArticleListCell extends Component {
                                 <img src={require('./comments.png')} alt="评论数"/>
                                 <div>{this.props.data.commentCount}</div>
                             </div>
-                        </p>
+                        </div>
                         <span className="lastSpan">
                             阅读全文
                         </span>

@@ -16,9 +16,6 @@ const items = [{
 }];
 
 export default class ArticleList extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         const { tags } = this.props;

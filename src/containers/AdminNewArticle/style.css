@@ -1,0 +1,40 @@
+.adminNewArticle .container{
+    margin-top: 10px;
+    color: black;
+}
+.adminNewArticle .titleInput{
+    width: 60%;
+    display: block;
+    margin:10px 0;
+}
+.adminNewArticle .selectStyle{
+    width: 70%;
+    display: block;
+}
+.adminNewArticle .bottomContainer{
+    width: 70%;
+    display: flex;
+    margin-top: 30px;
+}
+
+
+.adminNewArticle .buttonStyle{
+    margin-right: 30px;
+    width: 90px;
+    height: 30px;
+}
+.adminNewArticle .modalContainer{
+    height: 500px;
+    overflow: scroll;
+}
+
+.adminNewArticle .textArea{
+    border:solid thin #ddd;
+    margin:10px 0;
+    height: 400px;
+    width: 100%;
+}
+.adminNewArticle .subTitle{
+    color: #373737;
+    font-size: 14px;
+}

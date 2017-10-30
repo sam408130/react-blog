@@ -27,7 +27,7 @@ export default class NotFound extends Component {
     render(){
         return(
             <div className={style.nf_container}>
-                <img src={NotFoundImg} className={`${animationStyle.animated} ${animationStyle[this.state.animationType]}`} onMouseEnter={this.enter}/>
+                <img src={NotFoundImg} className={`${animationStyle.animated} ${animationStyle[this.state.animationType]}`} onMouseEnter={this.enter} alt=''/>
             </div>
         )
     }

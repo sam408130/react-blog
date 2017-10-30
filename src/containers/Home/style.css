@@ -17,14 +17,18 @@
     text-align: center;
 }
 
-h1 {
+h1  {
   font-weight: 300;
   margin: 0 0 0.25em 0;
   letter-spacing: -0.025em;
   font-size: 2.5em;
   line-height: 1.2;
-  color: inherit;
+
   text-decoration: none;
+}
+
+.h_container h1 {
+  color: inherit;
 }
 
 .h_container .main {

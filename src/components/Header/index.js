@@ -7,7 +7,7 @@ export default class Header extends Component {
         return (
             <div className="header">
                 <span className="logo">
-                    <img src={logo} />
+                    <img src={logo} alt='' />
                 </span>
                 <h1>Sam's Blog</h1>
                 <p>If &nbsp; you &nbsp; can't &nbsp; measure &nbsp; it , &nbsp;  you &nbsp; can't &nbsp; improve &nbsp; it</p>

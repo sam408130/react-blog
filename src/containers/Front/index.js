@@ -9,9 +9,6 @@ import NotFound from '../NotFound'
 import { BackTop } from 'antd'
 
 class Front extends Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
         const {url} = this.props.match;

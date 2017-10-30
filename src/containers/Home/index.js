@@ -3,7 +3,6 @@ import './style.css';
 import Header from '../../components/Header';
 import Menus from '../../components/Menus';
 import ArticleList from '../../components/ArticleList'
-import { Redirect } from 'react-router-dom';
 
 
 class Home extends Component {
