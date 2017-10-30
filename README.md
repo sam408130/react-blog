@@ -8,7 +8,7 @@
 
 ```
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './style.css';
 import AdminMenu from '../../components/AdminMenu';
 import AdminIndex from '../AdminIndex';
@@ -60,7 +60,7 @@ class Admin extends Component {
 
 ![屏幕快照 2017-10-30 上午10.40.59.png](http://upload-images.jianshu.io/upload_images/1224641-a8efbc3e0be062f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-先创建一个菜单组件，用户显示左侧的菜单，命名为`AdminMenu`：
+先创建一个菜单组件，用于显示左侧的菜单，命名为`AdminMenu`：
 ```
 import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
@@ -75,9 +75,6 @@ const menus = [
 ];
 
 export default class AdminMenu extends Component {
-    constructor(props){
-        super(props)
-    }
 
     render() {
         return(
@@ -115,13 +112,13 @@ export default class AdminMenu extends Component {
 
 ![屏幕快照 2017-10-30 上午11.00.16.png](http://upload-images.jianshu.io/upload_images/1224641-a926751dbd0a84ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-用户管理页面用户管理所有的注册用户(有关注册和数据管理的内容，我们会在第三部分：React技术栈+Express+Mongodb实现个人博客 -- Part 3 Express + Mongodb创建Server端中展开介绍），这里我们先完成数据展示。
+用户管理页面用于管理所有的注册用户(有关注册和数据管理的内容，我们会在第三部分：React技术栈+Express+Mongodb实现个人博客 -- Part 3 Express + Mongodb创建Server端中展开介绍），这里我们先完成页面展示。
 
 用户管理页面，我们将用到`antd design`中的`Table`组件，详细内容在[这里](https://ant.design/components/table-cn/)，它需要传入两个基本参数:
-- `dateSource` 用户展示的数据
+- `dateSource` 用于展示的数据
 - `column` 每一列的数据结构及索引
 
-ok，开始编写我们的`AdminManagerUser`：
+ok，开始编写`AdminManagerUser`：
 ```
 import React, { Component } from 'react';
 import './style.css';
@@ -161,9 +158,6 @@ const columns = [{
 }];
 
 class AdminManagerUser extends Component {
-    constructor(props){
-        super(props)
-    }
 
     render() {
         return (
@@ -251,7 +245,7 @@ npm install --save lodash
 ```
 以上是标签显示部分的代码，有几点细节要细说一下：
 - 第一个标签(首页)不能删除，所以在`Tag`下我们加入了`closable={index != 0}`逻辑
-- 当标签的长度大于20时，只显示一部分，并通过`Tooltip`显示全部
+- 当标签的长度大于20时，只显示一部分，并通过`Tooltip`显示全部内容
 - 使用`inputVisible`来控制显示输入框，还是添加标签的按钮
 
 ##### 2.开始添加标签
@@ -262,7 +256,7 @@ npm install --save lodash
     };
 ```
 `Input`组件中有两个方法:
-- `handleInputChange`，当输入内容发生改变是调用
+- `handleInputChange`，当输入内容发生改变时调用
 - `handleInputConfirm`，点击空白区域，或是按下回车时调用，表示确定输入
 
 ```
@@ -429,7 +423,7 @@ const confirm = Modal.confirm
 ![屏幕快照 2017-10-30 下午4.35.27.png](http://upload-images.jianshu.io/upload_images/1224641-bc0b9f5138c409f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 1.页面展示
-页面展示部分包括一个标题`Input`，文章正文`textarea`, 标签选择`select`，以及底部的三个按钮`Button`，其中`Input, Select，Button`我们都使用`antd`提供的组件：
+页面展示部分包括一个标题`Input`，文章正文`textarea`, 标签选择`Select`，以及底部的三个按钮`Button`，其中`Input, Select，Button`我们都使用`antd`提供的组件：
 ```
     render() {
         return  (
@@ -491,7 +485,7 @@ const confirm = Modal.confirm
 ```
 组件`Select`有很多种选择方式，包括单选，多选，详情看[这里](https://ant.design/components/select-cn/)
 
-预览不服我们使用`antd`中的组件`Modal`，显示内容同文章详情页一样，我们使用`remark`来渲染`markdown`内容：
+预览部分我们使用`antd`中的组件`Modal`，显示内容同文章详情页一样，我们使用`remark`来渲染`markdown`内容：
 
 ![屏幕快照 2017-10-30 下午5.46.21.png](http://upload-images.jianshu.io/upload_images/1224641-9bb6fcedfc145704.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -500,7 +494,8 @@ const confirm = Modal.confirm
 待补充
 
 #### 总结
-本篇文章主要介绍了管理页面的展示和基本逻辑，数据上的操作逻辑，我们会在之后的文章里补充。本篇文章对应的源码在这里：[React技术栈+Express+Mongodb实现个人博客 -- Part 2 后台管理页面](https://github.com/sam408130/react-blog/tree/part2)
+本篇文章主要介绍了管理页面的展示和基本逻辑，数据上的操作逻辑，我们会在之后的文章里补充。本篇文章对应的源码在这里：[React技术栈+Express+Mongodb实现个人博客 -- Part 2 后台管理页面](https://github.com/sam408130/react-blog/tree/part2)。
+
 
 #### 系列文章
 [React技术栈+Express+Mongodb实现个人博客](http://www.jianshu.com/p/e8d68f9e29c6)
