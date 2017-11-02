@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import style from './style.css';
 import { Menu, } from 'antd';
 
 const categories = ['首页','iOS','Python','ReactJs'];
@@ -32,7 +32,7 @@ export default class Menus extends Component {
                 onClick={this.handleClick}
                 selectedKeys={[this.state.current]}
                 mode="horizontal"
-                className="menucontainer"
+                className={style.menucontainer}
             >
                 {
                     categories.map((item,index)=>(

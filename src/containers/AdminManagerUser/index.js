@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import style from './style.css';
 import { Table } from  'antd';
 
 const dataSource = [{
@@ -44,7 +44,7 @@ class AdminManagerUser extends Component {
             <div>
                 <h2>用户管理</h2>
                 <Table
-                    className="table"
+                    className={style.table}
                     pagination={false}
                     columns={columns}
                     dataSource={dataSource}/>

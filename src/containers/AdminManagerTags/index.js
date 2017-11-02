@@ -1,5 +1,5 @@
 import React,  { Component } from 'react';
-import './style.css';
+import style from './style.css';
 import {Tag, Input, Tooltip, Button} from 'antd'
 import _ from 'lodash';
 
@@ -71,7 +71,7 @@ class AdminManagerTags extends Component {
                 )}
                 { !inputVisible && (
                     <Button
-                        className="tagStyle"
+                        className={style.tagStyle}
                         size="small"
                         type="dashed"
                         onClick={this.showInput}

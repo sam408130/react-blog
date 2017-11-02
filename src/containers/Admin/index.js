@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './style.css';
+import style from './style.css';
 import AdminMenu from '../../components/AdminMenu';
 import AdminIndex from '../AdminIndex';
 import AdminManagerUser from '../AdminManagerUser';
@@ -17,11 +17,11 @@ class Admin extends Component {
         return (
             <div>
                 {
-                    <div className="admin_container">
-                        <div className="menuContainer">
+                    <div className={style.container}>
+                        <div className={style.menuContainer}>
                             <AdminMenu history={this.props.history} />
                         </div>
-                        <div className="contentContainer">
+                        <div className={style.contentContainer}>
                             <Switch>
                                 <Route exact path={url} component={AdminIndex}/>
                                 <Route path={`${url}/managerUser`} component={AdminManagerUser}/>

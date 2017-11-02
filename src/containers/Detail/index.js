@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
 import remark from 'remark'
 import reactRenderer from 'remark-react'
-import '../Home/style.css'
-import '../../components/Header/style.css'
-import './style.css'
+import homeStyle from '../Home/style.css'
+import headerStyle from '../../components/Header/style.css'
+import markdown from './style.css'
 
 const articleContent = "## 标题 \n```code``` \n jlkfdsjal"
 
 class Detail extends Component {
     render() {
         return(
-            <div className="h_container">
-                <div className="header">
+            <div className={homeStyle.container}>
+                <div className={headerStyle.header}>
                     <h1>文章标题在这里</h1>
                 </div>
-                <div className="main">
-                    <div id='preview' className="main">
-                        <div className="markdown_body">
+                <div className={homeStyle.main}>
+                    <div id='preview'>
+                        <div className={markdown._body}>
                             {remark().use(reactRenderer).processSync(articleContent).contents}
                         </div>
                     </div>

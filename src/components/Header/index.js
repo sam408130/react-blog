@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './style.css';
+import style from './style.css';
 const logo = require('./logo.svg');
 
 export default class Header extends Component {
     render() {
         return (
-            <div className="header">
-                <span className="logo">
+            <div className={style.header}>
+                <span className={style.logo}>
                     <img src={logo} alt='' />
                 </span>
                 <h1>Sam's Blog</h1>

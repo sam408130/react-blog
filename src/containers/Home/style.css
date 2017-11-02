@@ -1,15 +1,15 @@
-.h_container {
-    width: 64em;
-    max-width: calc(100% - 4em);
+.container {
+    width: 64%;
+    max-width: 96%;
 		margin: 0 auto;
 }
 
 
-.h_container .nav {
+.nav {
     color: #636363;
-    width: 64em;
+    width: 64%;
     position: absolute;
-    max-width: calc(100% - 4em);
+    max-width: 96%;
     background-color: #f7f7f7;
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
@@ -23,17 +23,16 @@ h1  {
   letter-spacing: -0.025em;
   font-size: 2.5em;
   line-height: 1.2;
-
+  color: inherit;
   text-decoration: none;
 }
 
-.h_container h1 {
-  color: inherit;
-}
 
-.h_container .main {
+.main {
 	background-color: #ffffff;
 	color: #636363;
 	border-radius: 0.25em;
-  padding: 1em;
+  padding: 2em;
+  margin-top: 40px;
+
 }

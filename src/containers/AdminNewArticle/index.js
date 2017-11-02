@@ -2,8 +2,8 @@ import React,  { Component } from 'react';
 import remark from 'remark';
 import reactRenderer from 'remark-react';
 import { Input, Select, Button, Modal } from 'antd';
-import '../Detail/style.css';
-import './style.css';
+import detailStyle from '../Detail/style.css';
+import style from './style.css';
 
 
 const tags = ['首页', 'iOS', 'Python'];
@@ -60,27 +60,27 @@ class AdminNewArticle extends Component {
 
     render() {
         return  (
-            <div className="adminNewArticle">
+            <div className={style.adminNewArticle}>
                 <h2>新建文章</h2>
-                <div className="container">
-                    <span className="subTitle">标题</span>
+                <div className={style.container}>
+                    <span className={style.subTitle}>标题</span>
                     <Input
-                        className="titleInput"
+                        className={style.titleInput}
                         placeholder={'请输入文章标题'}
                         type='text'
                         value={this.state.title}
                         onChange={this.titleOnChange.bind(this)}
                     />
-                    <span className="subTitle">正文</span>
+                  <span className={style.subTitle}>正文</span>
                     <textarea
-                        className="textArea"
+                        className={style.textArea}
                         value={this.state.content}
                         onChange={this.onChanges.bind(this)}
                     />
-                    <span className="subTitle">分类</span>
+                  <span className={style.subTitle}>分类</span>
                     <Select
                         mode='multiple'
-                        className='titleInput'
+                        className={style.titleInput}
                         placeholder='请选择分类'
                         onChange={this.selectTags.bind(this)}
                         value={this.state.tags}
@@ -91,10 +91,10 @@ class AdminNewArticle extends Component {
                             ))
                         }
                     </Select>
-                    <div className="bottomContainer">
-                        <Button type="primary" onClick={this.publishArticle.bind(this)} className="buttonStyle">发布</Button>
-                        <Button type="primary" onClick={this.saveArticle.bind(this)} className="buttonStyle">保存</Button>
-                        <Button type="primary" onClick={this.preView.bind(this)} className="buttonStyle">预览</Button>
+                    <div className={style.bottomContainer}>
+                        <Button type="primary" onClick={this.publishArticle.bind(this)} className={style.buttonStyle}>发布</Button>
+                        <Button type="primary" onClick={this.saveArticle.bind(this)} className={style.buttonStyle}>保存</Button>
+                        <Button type="primary" onClick={this.preView.bind(this)} className={style.buttonStyle}>预览</Button>
                     </div>
                 </div>
 
@@ -106,8 +106,8 @@ class AdminNewArticle extends Component {
                     onCancel={this.handleOk.bind(this)}
                     footer={null}
                 >
-                    <div className="modalContainer">
-                        <div id='preview' className="markdown_body">
+                    <div className={style.modalContainer}>
+                        <div id='preview' className={detailStyle.markdown_body}>
                             {remark().use(reactRenderer).processSync(this.state.content).contents}
                         </div>
                     </div>

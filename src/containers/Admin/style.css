@@ -1,4 +1,4 @@
-.admin_container{
+.container{
     display: flex;
     flex-direction: row;
     background: white;
@@ -7,18 +7,18 @@
     top:0;
     width: 100%;
 }
-.admin_container .menuContainer{
+.container .menuContainer{
     width: 15%;
     height: 100%;
     background: #404040;
 }
-.admin_container .contentContainer{
+.container .contentContainer{
     width: 85%;
     overflow-y: scroll;
     padding: 20px;
 }
 
-.admin_container .contentContainer h2 {
+.container .contentContainer h2 {
     font-size: 2em;
     font-weight: 300;
     line-height: 1.5;

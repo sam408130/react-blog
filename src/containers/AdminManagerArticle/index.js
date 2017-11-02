@@ -1,5 +1,5 @@
 import React,  { Component } from 'react';
-import './style.css';
+import style from './style.css';
 import { ManagerArticleCell } from '../../components/ManagerArticleCell';
 import _ from 'lodash';
 import { Modal } from 'antd';
@@ -61,7 +61,7 @@ class AdminManagerArticle extends Component {
         return  (
             <div>
                 <h2>文章列表</h2>
-                <div className="adminArticleListContainer">
+                <div className={style.adminArticleListContainer}>
                     {
                         this.state.articleList.map( (article, index) => (
                             <ManagerArticleCell
