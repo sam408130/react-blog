@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sam408130/react-blog"
+    "url": "git+https://github.com/sam408130/react-blog/tree/part3"
   },
   "author": "Sam",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sam408130/react-blog/issues"
+    "url": "https://github.com/sam408130/react-blog/tree/part3/issues"
   },
-  "homepage": "https://github.com/sam408130/react-blog",
+  "homepage": "https://github.com/sam408130/react-blog/tree/part3",
   "dependencies": {
     "antd": "^2.13.1",
     "axios": "^0.16.2",
