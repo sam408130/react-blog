@@ -55,6 +55,16 @@ class AdminManagerArticle extends Component {
                         ))
                     }
                 </div>
+                <div  className={style.paginationStyle}>
+                    <Pagination
+                        defaultPageSize={10}
+                        onChange={(pageNum)=>{
+                            this.props.get_article_list(pageNum);
+                        }}
+                        current={this.props.pageNum}
+                        total={this.props.total}
+                    />
+                </div>
             </div>
         )
     }
