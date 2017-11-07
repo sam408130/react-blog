@@ -11,7 +11,7 @@
     "start-dev-api": "nodemon --watch server/api server/api/index.js",
     "start-prod-api": "forever start -c nodemon --watch server/api server/api/index.js",
     "start": "npm run watch-dev-client & npm run start-dev-api",
-    "deploy": "npm run build & npm run watch-prod-client & npm run start-prod-api"
+    "deploy": "npm run watch-prod-client & npm run start-prod-api"
   },
   "repository": {
     "type": "git",

@@ -30,22 +30,19 @@ module.exports = {
                 use: ['babel-loader']
             },
             {
-                test:/\.css$/,
-                exclude:/node_modules/,
-                use:ExtractTextPlugin.extract({
-                    fallback:'style-loader',
-                    use:[
-                        {
-                            loader:'css-loader',
-                            options:{
-                                modules:true,
-                                localIdentName:'[name]-[local]-[hash:base64:5]',
-                                importLoaders:1
-                            }
-                        },
-                        'postcss-loader'
-                    ]
-                })
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ['style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[name]-[local]-[hash:base64:5]',
+                            importLoaders: 1
+                        }
+                    },
+                    'postcss-loader'
+                ]
             },
             {
                 test: /\.css$/,

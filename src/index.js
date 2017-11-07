@@ -5,12 +5,12 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import configureStore from './configureStore'
 import 'antd/dist/antd.css';
-import './index.css';
+import style from './index.css';
 
 const store = configureStore();
 
 render(
-    <AppContainer>
+    <AppContainer >
         <Provider store={store}>
             <IndexApp/>
         </Provider>
