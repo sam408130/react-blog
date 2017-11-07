@@ -4,6 +4,8 @@
     background: white;
     position: fixed;
     top:0;
+    height: 100%;
+    width: 100%;
 }
 .container .menuContainer{
     width: 15%;
