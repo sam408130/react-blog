@@ -13,7 +13,6 @@
 
 .container {
     width: 64%;
-    max-width: 96%;
 		margin: 0 auto;
 }
 
@@ -26,6 +25,49 @@
     font-size: 3.25em;
     color: #ffffff;
 }
+
+@media screen and (max-width: 1024px) {
+
+  .container {
+    width: 84%;
+  }
+  .nav {
+    width: 84%;
+  }
+  .main {
+    padding: 1em;
+  }
+  .header {
+      padding: 2em;
+  }
+  .header h1 {
+    font-size: 2.25em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .container {
+    width: 96%;
+  }
+  .nav {
+    width: 96%;
+  }
+  .main {
+    padding: 0.5em;
+  }
+  .header {
+    padding: 2em;
+  }
+  .header h1 {
+    font-size: 2.25em;
+  }
+
+}
+
+
+
+
 
 @font-face {
   font-family: octicons-link;

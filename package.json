@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch-client": "cross-env NODE_ENV=production node ./server/index.js",
+    "watch-dev-client": "cross-env NODE_ENV=development node ./server/index.js",
+    "watch-prod-client": "cross-env NODE_ENV=production forever start ./server/index.js",
     "build": "NODE_ENV=production webpack --config ./webpack.prod.js --progress --profile --colors",
     "start-dev-api": "nodemon --watch server/api server/api/index.js",
-    "start": "npm run watch-client & npm run start-dev-api"
+    "start-prod-api": "forever start -c nodemon --watch server/api server/api/index.js",
+    "start": "npm run watch-dev-client & npm run start-dev-api",
+    "deploy": "npm run build & npm run watch-prod-client & npm run start-prod-api"
   },
   "repository": {
     "type": "git",

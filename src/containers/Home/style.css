@@ -1,22 +1,24 @@
 .container {
     width: 64%;
-    max-width: 96%;
 		margin: 0 auto;
     height: 100%;
 }
+
+
 
 
 .nav {
     color: #636363;
     width: 64%;
     position: absolute;
-    max-width: 96%;
     background-color: #f7f7f7;
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
     cursor: default;
     text-align: center;
 }
+
+
 
 h1  {
   font-weight: 300;
@@ -37,6 +39,37 @@ h1  {
   margin-top: 40px;
 
 }
+
+@media screen and (max-width: 1024px) {
+
+  .container {
+    width: 84%;
+  }
+  .nav {
+    width: 84%;
+  }
+  .main {
+    padding: 1em;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .container {
+    width: 96%;
+  }
+  .nav {
+    width: 96%;
+  }
+  .main {
+    padding: 0.5em;
+  }
+
+}
+
+
+
 
 .paginationContainer{
     text-align: center;
