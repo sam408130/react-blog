@@ -1,33 +1,23 @@
 import React, { Component } from 'react'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 import ArticleListCell from '../ArticleListCell'
-
-const items = [{
-    key: '123',
-    title: '标题',
-    time: '2017-10-29',
-    viewCount: '100',
-    commentCount: '23'
-},{
-    key: '123332',
-    title: '标题2',
-    time: '2017-10-29 12:00:00',
-    viewCount: '10',
-    commentCount: '123'
-}];
 
 export default class ArticleList extends Component {
 
-    render() {
-        const { tags } = this.props;
+    constructor(props){
+        super(props);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
+    }
+
+    render(){
         return(
             <div>
                 {
-                    items.map((item,index) => (
-                        <ArticleListCell history={this.props.history} key={index} data={item} tags={tags} />
+                    this.props.data.map((item,index)=>(
+                        <ArticleListCell getArticleDetail={this.props.getArticleDetail} history={this.props.history} key={index} data={item}/>
                     ))
                 }
             </div>
         )
-
     }
 }

@@ -1,7 +1,11 @@
 import React,  { Component } from 'react';
 import style from './style.css';
 import {Tag, Input, Tooltip, Button} from 'antd'
-import _ from 'lodash';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actions } from '../../reducers/adminManagerTags'
+const {get_all_tags,delete_tag,add_tag} = actions;
+
 
 class AdminManagerTags extends Component {
     constructor(props){
@@ -23,12 +27,7 @@ class AdminManagerTags extends Component {
 
     handleInputConfirm = () => {
         // 添加标签
-        if (this.state.inputValue.length > 0) {
-            this.state.tags.push(this.state.inputValue)
-            this.setState({
-                tags: this.state.tags,
-            });
-        }
+        this.props.addTag(this.state.inputValue);
         this.setState({
             inputVisible: false,
             inputValue: '',
@@ -36,14 +35,13 @@ class AdminManagerTags extends Component {
     };
 
     handleDelete = (removeTag) => {
-        _.remove(this.state.tags, tag => tag === removeTag);
-        this.setState({ tags: this.state.tags })
+        this.props.deleteTag(removeTag)
     }
 
     saveInputRef = input => this.input = input;
     render() {
         const { inputVisible, inputValue } = this.state;
-        const { tags } = this.state;
+        const { tags } = this.props;
         return  (
             <div>
                 <h2>标签管理</h2>
@@ -80,6 +78,27 @@ class AdminManagerTags extends Component {
             </div>
         )
     }
+    componentDidMount() {
+        this.props.getAllTags();
+    }
+
 }
 
-export default AdminManagerTags;
+function mapStateToProps(state) {
+    return{
+        tags:state.admin.tags
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return{
+        getAllTags : bindActionCreators(get_all_tags,dispatch),
+        deleteTag : bindActionCreators(delete_tag,dispatch),
+        addTag : bindActionCreators(add_tag,dispatch),
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AdminManagerTags)

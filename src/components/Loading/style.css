@@ -1,0 +1,9 @@
+.container{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background: rgba(0,0,0,.1);
+    z-index: 999;
+}

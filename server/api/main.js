@@ -56,14 +56,15 @@ router.get('/getArticleDetail', (req, res) => {
     let _id = req.query.id;
     Article.findOne({_id})
         .then(data=>{
+
             data.viewCount = data.viewCount + 1;
             Article.update({_id},{viewCount:data.viewCount})
                 .then(result => {
-                      responseClient(res,200,0,'',result);
+                      responseClient(res,200,0,'success',data);
                 }).cancel(err => {
                     throw err
                 })
-        }).cacel(err => {
+        }).cancel(err => {
             responseClient(res);
         });
 });

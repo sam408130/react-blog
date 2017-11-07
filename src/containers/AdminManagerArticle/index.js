@@ -1,42 +1,24 @@
-import React,  { Component } from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin'
+import React,{ Component, PropTypes } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import style from './style.css';
 import { ManagerArticleCell } from '../../components/ManagerArticleCell';
-import _ from 'lodash';
 import { Modal } from 'antd';
 const confirm = Modal.confirm;
-
-const articleList = [{
-    title: '文章标题1',
-    author: 'sam',
-    viewCount: '12',
-    time: '2017-10-19',
-    _id: '1213123',
-    isPublish: '已发布'
-},{
-    title: '文章标题2',
-    author: 'sam',
-    viewCount: '132',
-    time: '2017-10-19',
-    _id: '12131232323',
-    isPublish: '草稿'
-}];
+import { Pagination } from 'antd';
+import { actions } from '../../reducers/adminManagerArticle'
+import { actions as FrontActions } from '../../reducers/frontReducer'
+const { get_article_list,delete_article,edit_article } = actions;
+const { get_article_detail } = FrontActions;
 
 
 class AdminManagerArticle extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            articleList: articleList
-        }
+    constructor(props){
+        super(props);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
     }
 
-    edit_article = (id) => {
-        console.log('编辑文章：',id)
-    }
-
-    getArticleDetail = (id) => {
-        console.log('跳转到文章详情:',id)
-    }
 
     delete = (id) => {
         var that = this;
@@ -47,8 +29,7 @@ class AdminManagerArticle extends Component {
           okType: 'danger',
           cancelText: 'No',
           onOk() {
-              _.remove(that.state.articleList, article => article._id === id);
-              that.setState({ articleList: that.state.articleList });
+              this.props.delete_article(id);
           },
           onCancel() {
             console.log('Cancel');
@@ -57,17 +38,16 @@ class AdminManagerArticle extends Component {
     }
 
     render() {
-        console.log(articleList)
         return  (
             <div>
                 <h2>文章列表</h2>
                 <div className={style.adminArticleListContainer}>
                     {
-                        this.state.articleList.map( (article, index) => (
+                        this.props.articleList.map( (article, index) => (
                             <ManagerArticleCell
-                                edit_article={(id) => this.edit_article(id)}
+                                edit_article={(id) => this.props.edit_article(id)}
                                 history={this.props.history}
-                                getArticleDetail={(id) => this.getArticleDetail(id)}
+                                getArticleDetail={(id) => this.props.getArticleDetail(id)}
                                 delete={(id) => this.delete(id)}
                                 key={index}
                                 data={article}
@@ -78,6 +58,44 @@ class AdminManagerArticle extends Component {
             </div>
         )
     }
+
+    componentDidMount() {
+        if(this.props.articleList.length === 0){
+            this.props.get_article_list()
+        }
+    }
+
 }
 
-export default AdminManagerArticle;
+AdminManagerArticle.defaultProps={
+    articleList:[],
+    pageNum:1,
+    total:0
+};
+
+AdminManagerArticle.defaultProps = {
+    articleList:PropTypes.array,
+    pageNum:PropTypes.number,
+    total:PropTypes.number
+};
+function mapStateToProps(state) {
+    return{
+        articleList:state.admin.articles.articleList,
+        pageNum:state.admin.articles.pageNum,
+        total:state.admin.articles.total
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return{
+        get_article_list:bindActionCreators(get_article_list,dispatch),
+        delete_article:bindActionCreators(delete_article,dispatch),
+        edit_article:bindActionCreators(edit_article,dispatch),
+        get_article_detail:bindActionCreators(get_article_detail,dispatch)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AdminManagerArticle);

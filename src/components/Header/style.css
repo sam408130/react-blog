@@ -6,6 +6,7 @@
 .header h1 {
     font-size: 3.25em;
     color: #ffffff;
+    margin-bottom: 0.5em;
 }
 
 .header span {
@@ -24,4 +25,7 @@
   display: block;
   margin: 0 auto;
   max-width: 75%;
+  height: 85px;
+  width: 85px;
+  border-radius: 100%;
 }

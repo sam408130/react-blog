@@ -19,7 +19,7 @@ app.use('/api', (req,res) => {
 
 app.use('/', connectHistoryApiFallback());
 app.use('/',Express.static(path.join(__dirname,"..",'build')));
-app.use('/',Express.static(path.join(__dirname,"..",'public')));
+
 
 app.use(compression());
 app.use(favicon(path.join(__dirname,'..','public','favicon.ico')));

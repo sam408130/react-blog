@@ -4,19 +4,28 @@
   font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
+
 body {
   background-color: #935d8c;
   background-image: url("http://oq51opnf2.bkt.clouddn.com/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 }
 
 body {
-  background-color: #935d8c;
   color: rgba(255, 255, 255, 0.65);
 }
 
-body, input, select, textarea {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 17pt;
-  font-weight: 300;
-  line-height: 1.65;
+html, body {
+  height: auto;
+  min-height: 100%;
+}
+
+
+a {
+  -moz-transition: color 0.2s ease, border-bottom 0.2s ease;
+  -webkit-transition: color 0.2s ease, border-bottom 0.2s ease;
+  -ms-transition: color 0.2s ease, border-bottom 0.2s ease;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  text-decoration: none;
+  border-bottom: dotted 1px;
+  color: inherit;
 }

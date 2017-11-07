@@ -7,17 +7,17 @@ export default class ArticleListCell extends Component {
         return(
             <div className={style.container} onClick={
                 () => {
-                    this.props.history.push(`/detail/${this.props.data._id}`, {id: this.props.data_id});
-                    // props.getArticleDetail(props.data_id)
+                    this.props.history.push(`/detail/${this.props.data._id}`, {id: this.props.data._id});
+                    this.props.getArticleDetail(this.props.data._id)
                 }
               }
             >
                 <div className={style.content}>
                     <div className={style.title}>
-                        <h2>{this.props.data.title} + {this.props.tags}</h2>
+                        <h2>{this.props.data.title}</h2>
                     </div>
                     <p className={style.summary}>
-                        这里应该有摘要的，因为设计的数据库表表结构的时候忘记了，后面也是懒得加了，感觉太麻烦了，就算了
+                        {this.props.data.desc}
                     </p>
                     <div>
                         <div className={style.info}>

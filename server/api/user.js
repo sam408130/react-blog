@@ -7,7 +7,7 @@ const router = Express.Router();
 router.post('/login', (req,res) => {
     let { username, password } = req.body;
     if (!username) {
-        responseClient(res,400,2,2,'用户名不能为空');
+        responseClient(res,400 ,2,'用户名不能为空');
         return;
     }
 
@@ -18,8 +18,9 @@ router.post('/login', (req,res) => {
 
     User.findOne({
         username,
-        password:md5(password + MD5_SUFFIX)
+        password: md5(password + MD5_SUFFIX)
     }).then(userInfo => {
+        console.log(userInfo)
         if(userInfo){
             //登录成功
             let data = {};

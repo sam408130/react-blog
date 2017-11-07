@@ -8,6 +8,7 @@ const CleanPlugin = require('clean-webpack-plugin');
 const ROOT_PATH = pathLib.resolve(__dirname);
 const ENTRY_PATH = pathLib.resolve(ROOT_PATH, 'src');
 const OUTPUT_PATH = pathLib.resolve(ROOT_PATH, 'build');
+const AppHtml = pathLib.resolve(ENTRY_PATH,'index.html')
 console.log(pathLib.resolve(ENTRY_PATH, 'index.js'));
 
 module.exports = {
@@ -17,7 +18,7 @@ module.exports = {
     },
     output: {
         path: OUTPUT_PATH,
-        publicPath: '/',
+        publicPath: './',
         filename: '[name]-[chunkhash].js'
     },
     devtool: 'source-map',

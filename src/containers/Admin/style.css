@@ -3,13 +3,10 @@
     flex-direction: row;
     background: white;
     position: fixed;
-    height: 100%;
     top:0;
-    width: 100%;
 }
 .container .menuContainer{
     width: 15%;
-    height: 100%;
     background: #404040;
 }
 .container .contentContainer{

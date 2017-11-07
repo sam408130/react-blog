@@ -2,6 +2,7 @@
     width: 64%;
     max-width: 96%;
 		margin: 0 auto;
+    height: 100%;
 }
 
 
@@ -35,4 +36,9 @@ h1  {
   padding: 2em;
   margin-top: 40px;
 
+}
+
+.paginationContainer{
+    text-align: center;
+    margin: 30px 0;
 }
