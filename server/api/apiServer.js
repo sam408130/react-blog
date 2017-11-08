@@ -38,7 +38,7 @@ mongoose.connect(`mongodb://${config.dbHost}:${config.dbPort}/blog`, function (e
         console.log(err, "数据库连接失败");
         return;
     }
-    console.log('数据库连接成功');
+    console.info(`===> db server is running at ${config.dbHost}:${config.dbPort}`)
 
     app.listen(port, function (err) {
         if (err) {

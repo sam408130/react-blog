@@ -1,6 +1,5 @@
 .adminArticleListContainer {
 
-    height: 600px;
     overflow: scroll;
 }
 
@@ -12,7 +11,7 @@
     margin: 0;
 }
 
-.adminArticleListContainer .paginationStyle{
+.paginationStyle{
     margin-top: 20px;
     text-align: center;
 }
